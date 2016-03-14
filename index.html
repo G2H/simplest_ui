@@ -12,34 +12,29 @@
 	<div id="container">
 	<div id="title"><h1>Coucou</h1></div>
 	<div id="subtitle"><h3>Can I help you with anything?</h3></div>
-    <div id="lines">
-    <a href="#">
-    	<div class='line'>
-    		<row>
-    			<column cols="12">
-    				<div class='icon'>&nbsp;</div>
-    				<div class='line_title'>Yo</div>
-    				<div class='line_subtitle'>This is a subtitle</div>
-    				<div class='chevron'>&#9658;</div>
-    			</column>
-    		</row>
-    	</div>
-    </a>
-    <a href="#"><div class="line"><row><column cols='12'><div class="icon"></div><div class="line_title">Line title</div><div class="line_subtitle">C'est le sous-titre</div><div class="chevron"></div></column></row></div></a>
-    </div>
+    <div id="lines"></div>
     <div id="footer"><h4>Footer</h4></div>
 </div>
 </body>
 </html>
-
+<script src='scripts/app.js'></script>
 <script>
 
-data = [ {title: 'Line title', subtitle: "C'est le sous-titre", link:'#'}
-        ,{title: 'Line title', subtitle: "C'est le sous-titre", link:'#'}
-        ,{title: 'Line title', subtitle: "C'est le sous-titre", link:'#'}
-        ,{title: 'Line title', subtitle: "C'est le sous-titre", link:'#'}
+data = [ {title: 'Line title', subtitle: "C'est le sous-titre", link:'#', icon:''}
+        ,{title: 'Line title', subtitle: "C'est le sous-titre", link:'#', icon:''}
+        ,{title: 'Line title', subtitle: "C'est le sous-titre", link:'#', icon:''}
+        ,{title: 'Line title', subtitle: "C'est le sous-titre", link:'#', icon:''}
 ];
+
+
+var generateRows = function(rows){
+    rows.forEach(function(row){
+        var new_row = drawRow(row);
+        appendToDiv('lines',new_row);
+    })
+}
+
+generateRows(data);
 
 </script>
 
-<script src='scripts/app.js'></script>

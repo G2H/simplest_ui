@@ -7,10 +7,14 @@ function drawRow(object){
 
     var row = document.createElement('row');
     var column = document.createElement('column');
-    column.cols = '12';
+    var cols = document.createAttribute('cols');
+    cols.value = '12';
+    column.setAttributeNode(cols);
 
     var icon = document.createElement('div');
     icon.className = "icon";
+    icon_unicode = document.createTextNode(object.icon);
+    icon.appendChild(icon_unicode);
 
     var line_title = document.createElement('div');
     line_title.className = "line_title";
@@ -42,4 +46,8 @@ function drawRow(object){
 function appendToDiv(id, element){
     div = document.getElementById(id);
     div.appendChild(element)
+}
+
+function createFooter(){
+    //given an array, create X links and append them to the footer
 }

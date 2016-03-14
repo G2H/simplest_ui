@@ -1,3 +1,9 @@
+:root {
+	/* here we set variables
+	can't use yet because not supported on android */
+  --left-space: 50px;
+}
+
 body{
 	background-color: #ECF0F1;
 	color: #363e43;
@@ -16,46 +22,49 @@ body{
 #subtitle{
 	background-color: #ECF0F1;
 	height: 70px;
-	padding-left: 5%;
+	padding-left: 50px; /* icon div width*/
 	padding-top: 20px;
 }
 #footer{
 	background-color: #3498DB;
 	height: 50px;
+	width: 100%;
 	padding-left: 5%;
 	padding-top: 10px;
+	position: fixed; /*  place footer at the bottom */
+    bottom: 0; /*  place footer at the bottom */
 }
 .line{
 	display: block;
     position: relative;
     border-bottom: 1px solid #edece9;
 	color: #363e43;
-		background-color: white;
-		text-decoration: none;
-		height: 70px;
-		width: 100%;
-	}
-	.icon{
-		display: block;
-		width: 50px;
-		height: 70px;
-		float: left;
-	}
-	.line_title{
-		padding-top: 5px;
-		font-weight: bold;
-		font-size: 140%;
-		font-color: #333333;
-	}
-	.line_title a {text-decoration: none;}
-	.line_subtitle{
-		font-size: 110%;
-	color: #767676;
-		float: left;
-		padding-top: 5px;
-	}
-	.chevron{
-		font-size: 200%;
-		float: right;
-		padding-right: 20px;
-	}
+	background-color: white;
+	text-decoration: none;
+	height: 70px;
+	width: 100%;
+}
+.icon{
+	display: block;
+	width: 50px;
+	height: 70px;
+	float: left;
+}
+.line_title{
+	padding-top: 10px;
+	font-weight: bold;
+	font-size: 140%;
+	font-color: #333333;
+}
+.line_title a {text-decoration: none;}
+.line_subtitle{
+	font-size: 110%;
+    color: #767676;
+	float: left;
+	padding-top: 4px;
+}
+.chevron{
+	font-size: 200%;
+	float: right;
+	padding-right: 20px;
+}

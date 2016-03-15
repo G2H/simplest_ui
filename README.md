@@ -10,7 +10,6 @@ fix the CSS (big one)
 	Correct paddings
 	Place chevron at the right place
 	suppress underline on link
-clean function names
-Create title, footer and subtitle function
+Create footer function
 Create base json
 ```

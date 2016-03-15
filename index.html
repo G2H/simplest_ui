@@ -10,8 +10,8 @@
 </head>
 <body>
 	<div id="container">
-	<div id="title"><h1>Coucou</h1></div>
-	<div id="subtitle"><h3>Can I help you with anything?</h3></div>
+	<div id="title"><h1 id='title_text'>Coucou</h1></div>
+	<div id="subtitle"><h3 id='subtitle_text'>Can I help you with anything?</h3></div>
     <div id="lines"></div>
     <div id="footer"><h4>Footer</h4></div>
 </div>
@@ -20,21 +20,31 @@
 <script src='scripts/app.js'></script>
 <script>
 
-data = [ {title: 'Line title', subtitle: "C'est le sous-titre", link:'#', icon:''}
-        ,{title: 'Line title', subtitle: "C'est le sous-titre", link:'#', icon:''}
-        ,{title: 'Line title', subtitle: "C'est le sous-titre", link:'#', icon:''}
-        ,{title: 'Line title', subtitle: "C'est le sous-titre", link:'#', icon:''}
-];
+data = {title: "Coucou les gens", subtitle:"la vie c'est bien", footer: "Au revoir"
+        ,pages:[{id: 1, menu: [ {id:1,title: 'First element',subtitle: "C'est le sous-titre",link:'#',icon:'', link_id: 2}
+                ,{title: 'Line title', subtitle: "C'est le sous-titre", link:'#', icon:'', link_id: 2}
+                ,{title: 'Line title', subtitle: "C'est le sous-titre", link:'#', icon:'', link_id: 2}
+                ,{title: 'Line title', subtitle: "C'est le sous-titre", link:'#', icon:'', link_id: 2}]
+                }
+                ,{id: 2, menu: [ {id:1,title: 'This is a second menu',subtitle: "Yeye #super fort",link:'#',icon:'', link_id: 1}
+                ,{title: 'Beaucoup trop style mon gas', subtitle: "Cela est du code", link:'#', icon:'', link_id:''}]
+                }
+                ]
+};
 
 
-var generateRows = function(rows){
-    rows.forEach(function(row){
-        var new_row = drawRow(row);
-        appendToDiv('lines',new_row);
-    })
+function renderPage(object,id){
+    document.getElementById('lines').innerHTML = '';
+    updateTitles(object);
+    var ObjectToRender = filterObject(object.pages,'id',id)[0];
+    generateRows(ObjectToRender.menu);
 }
-
-generateRows(data);
+var the_id = 1;
+renderPage(data,the_id);
+function changeId(newid){
+    if (typeof the_id !== 'undefined' & typeof newid !== 'undefined') {the_id = newid;}
+    renderPage(data,the_id);
+}
 
 </script>
 

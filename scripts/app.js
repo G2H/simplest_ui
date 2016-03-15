@@ -2,18 +2,21 @@
 
 */
 function createDiv(div_class){
+// create a div and assign a class
     a = document.createElement('div');
     a.className = div_class;
     return a;
 }
 
 function createLink(href){
+// create a link and fill the href
     a = document.createElement('a');
     a.href = href;
     return a;
 }
 
 function updateText(id,new_text){
+// update id's text
     document.getElementById(id).innerHTML = new_text;
 }
 
@@ -22,7 +25,8 @@ function updateTitles(object){
     updateText('subtitle_text',object.subtitle);
 }
 
-function creatRow(object){
+function createRow(object){
+// given an object with link, title and subtitle element, return a row div
     var a = createLink(object.link);
     var onclick = document.createAttribute('onclick');
     onclick.value = 'changeId('+object.link_id+')';
@@ -65,20 +69,31 @@ function creatRow(object){
 }
 
 function appendToDiv(id, element){
+// appends an dom object to a div
     div = document.getElementById(id);
     div.appendChild(element)
 }
 
 var generateRows = function(rows){
+// given an rows object, append them to the content div
     rows.forEach(function(row){
-        var new_row = creatRow(row);
-        appendToDiv('lines',new_row);
+        var new_row = createRow(row);
+        appendToDiv('content',new_row);
     })
 }
+function generatePage(object){
+//given some html, appends it in the content div
+    text_content = document.createElement('div');
+    text_content.id = 'text_content';
+    text_content.innerHTML = object;
+    appendToDiv('content',text_content);
+}
+
 function createFooter(){
     //given an array, create X links and append them to the footer
 }
 
 function filterObject(object, column, value){
+// given an object, a column and a value, filter that object
     return object.filter(function(d){return d[column] == value;});
 }

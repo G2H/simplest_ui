@@ -12,21 +12,21 @@ data = {
                "title":"First element",
                "subtitle":"C'est le sous-titre",
                "link":"#",
-               "icon":"",
+               "icon":"🦁",
                "link_id":2
             },
             {  
                "title":"Line title",
                "subtitle":"C'est le sous-titre",
                "link":"#",
-               "icon":"",
+               "icon":"☺",
                "link_id":2
             },
             {  
                "title":"Line title",
                "subtitle":"C'est le sous-titre qui mene vers une page",
                "link":"#",
-               "icon":"",
+               "icon":" 🐳",
                "link_id":3
             },
             {  
@@ -47,7 +47,7 @@ data = {
                "title":"This is a second menu",
                "subtitle":"Yeye #super fort",
                "link":"#",
-               "icon":"",
+               "icon":"🐶",
                "link_id":1
             },
             {  

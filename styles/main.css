@@ -5,37 +5,47 @@
 }
 
 body{
-	background-color: #ECF0F1;
+	background-color: white;
 	color: #363e43;
 	height: 100%; 
 	width: 100%;
+	font-family: 'Source sans pro';
 	
 }
 #container{
 
 }
 #title{
-	background-color: #3498DB;
+	background-color: white;
+	text-align: center;
 	height: 100px;
-	padding-left: 5%;
 	padding-top: 10px;
+	border-bottom: 1px solid #edece9;
+}
+#title_text{
+	padding-top: 22px;
 }
 #subtitle{
 	background-color: #ECF0F1;
-	height: 70px;
+	height: 0px;
 	padding-left: 50px; /* icon div width*/
-	padding-top: 20px;
+	padding-top: 0px;
 }
+
+#return_div{
+	background-color: white;
+	width: 50px;
+}
+
 #footer{
-	background-color: #3498DB;
 	height: 50px;
+	text-align: center;
 	width: 100%;
-	padding-left: 5%;
 	padding-top: 10px;
+	border-top: 1px solid #edece9;
 	position: fixed; /*  place footer at the bottom */
     bottom: 0; /*  place footer at the bottom */
 }
-
 #text_content{
 	background-color: white;
 	height: 100%;
@@ -68,17 +78,20 @@ body{
 	font-size: 140%;
 	font-color: #333333;
 }
-.line_title a {text-decoration: none;}
 .line_subtitle{
 	font-size: 110%;
     color: #767676;
 	float: left;
 	padding-top: 4px;
 }
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+}
 .chevron{
 	font-size: 200%;
-	float: right;
 	padding-right: 20px;
+	margin-top:-8px; /* Horrible hack */
 	position: absolute;
 	right:0;
 }

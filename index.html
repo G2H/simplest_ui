@@ -11,7 +11,7 @@
 <body>
 	<div id="container">
 	<div id="title"><h1 id='title_text'></h1></div>
-	<div id="subtitle"><h3 id='subtitle_text'>Site loading...</h3></div>
+	<!--<div id="subtitle"><h3 id='subtitle_text'>Site loading...</h3></div>-->
     <div id="content"><div class="loader">Loading...</div></div>
     <footer id="footer"><h4>Footer</h4></footer>
 </div>
@@ -31,9 +31,15 @@ function renderPage(object,id){
 }
 
 var the_id = 1;
+var previous_id = 1;
+
 renderPage(data,the_id);
+
 function changeId(newid){
-    if (typeof the_id !== 'undefined' & typeof newid !== 'undefined') {the_id = newid;}
+    if (typeof the_id !== 'undefined' & typeof newid !== 'undefined') {
+        previous_id = the_id; 
+        the_id = newid;
+    }
     renderPage(data,the_id);
 }
 

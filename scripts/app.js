@@ -22,7 +22,7 @@ function updateText(id,new_text){
 
 function updateTitles(object){
     updateText('title_text',object.title);
-    updateText('subtitle_text',object.subtitle);
+   // updateText('subtitle_text',object.subtitle);
 }
 
 function createRow(object){
@@ -96,4 +96,23 @@ function createFooter(){
 function filterObject(object, column, value){
 // given an object, a column and a value, filter that object
     return object.filter(function(d){return d[column] == value;});
+}
+
+function returnButton(){
+// draw return button with a link to previous page
+    a = document.createElement('a');
+    a.id = 'return_button';
+
+    var onclick = document.createAttribute('onclick');
+    onclick.value = 'changeId('+previous_id+')';
+    a.setAttributeNode(onclick);
+
+    div = document.createElement('div');
+    div.id = 'return_div';
+    div_text = document.createTextNode('←');
+
+    div.appendChild(div_text);
+    a.appendChild(div);
+
+    document.getElementById('title').insertBefore(a, document.getElementById('title_text'));
 }

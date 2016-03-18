@@ -6,5 +6,7 @@ Create a simple, lightweight and mobile first menus website from a JSON file. Bu
 ## Todo
 ```
 Make it prettier
-Create footer function
+
+Get the JSON through XMLHTTPrequest
+
 ```

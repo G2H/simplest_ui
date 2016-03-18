@@ -10,7 +10,7 @@
 </head>
 <body>
 	<div id="container">
-	<div id="title"><h1 id='title_text'></h1></div>
+	<div id="title"><h2 id='title_text'></h2></div>
 	<!--<div id="subtitle"><h3 id='subtitle_text'>Site loading...</h3></div>-->
     <div id="content"><div class="loader">Loading...</div></div>
     <footer id="footer"><h4>Footer</h4></footer>
@@ -20,16 +20,6 @@
 <script src='scripts/app.js'></script>
 <script src='scripts/data.js'></script>
 <script>
-
-function renderPage(object,id){
-    document.getElementById('content').innerHTML = '';
-    updateTitles(object);
-    var ObjectToRender = filterObject(object.pages,'id',id)[0];
-    if(ObjectToRender.type=='menu'){generateRows(ObjectToRender.elements);}
-    if(ObjectToRender.type=='page'){generatePage(ObjectToRender.elements);}
-    drawReturnButton();
-}
-
 var the_id = 1;
 var previous_id = 1;
 

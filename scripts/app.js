@@ -131,3 +131,12 @@ function drawReturnButton(){
         document.getElementById('title').insertBefore(a, document.getElementById('title_text'));
     }
 }
+
+function renderPage(object,id){
+    document.getElementById('content').innerHTML = '';
+    updateTitles(object);
+    var ObjectToRender = filterObject(object.pages,'id',id)[0];
+    if(ObjectToRender.type=='menu'){generateRows(ObjectToRender.elements);}
+    if(ObjectToRender.type=='page'){generatePage(ObjectToRender.elements);}
+    drawReturnButton();
+}

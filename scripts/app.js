@@ -108,18 +108,26 @@ function filterObject(object, column, value){
 
 function drawReturnButton(){
 // draw return button with a link to previous page
-    var a = createLink('#');
+    // delete the return button
+    if (document.contains(document.getElementById("return_a"))) {
+                document.getElementById("return_a").remove();
+    }
 
-    var onclick = document.createAttribute('onclick');
-    onclick.value = 'changeId('+previous_id+')';
-    a.setAttributeNode(onclick);
+    if(the_id != 1){
+        var a = createLink('#');
+        a.id = 'return_a'
 
-    div = document.createElement('div');
-    div.id = 'return_button';
-    div_text = document.createTextNode('〈');
+        var onclick = document.createAttribute('onclick');
+        onclick.value = 'changeId('+previous_id+')';
+        a.setAttributeNode(onclick);
 
-    div.appendChild(div_text);
-    a.appendChild(div);
+        div = document.createElement('div');
+        div.id = 'return_button';
+        div_text = document.createTextNode('〈');
 
-    document.getElementById('title').insertBefore(a, document.getElementById('title_text'));
+        div.appendChild(div_text);
+        a.appendChild(div);
+
+        document.getElementById('title').insertBefore(a, document.getElementById('title_text'));
+    }
 }

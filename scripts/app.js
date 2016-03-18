@@ -93,23 +93,30 @@ function createFooter(){
     //given an array, create X links and append them to the footer
 }
 
+
+function ifNull(element){
+    if (typeof element !== 'undefined'){
+        return element;
+    }
+    else {return '';}
+}
+
 function filterObject(object, column, value){
 // given an object, a column and a value, filter that object
     return object.filter(function(d){return d[column] == value;});
 }
 
-function returnButton(){
+function drawReturnButton(){
 // draw return button with a link to previous page
-    a = document.createElement('a');
-    a.id = 'return_button';
+    var a = createLink('#');
 
     var onclick = document.createAttribute('onclick');
     onclick.value = 'changeId('+previous_id+')';
     a.setAttributeNode(onclick);
 
     div = document.createElement('div');
-    div.id = 'return_div';
-    div_text = document.createTextNode('←');
+    div.id = 'return_button';
+    div_text = document.createTextNode('〈');
 
     div.appendChild(div_text);
     a.appendChild(div);

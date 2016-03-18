@@ -7,5 +7,4 @@ Create a simple, lightweight and mobile first menus website from a JSON file. Bu
 ```
 Make it prettier
 Create footer function
-Create a return button (by setting a previous id variable)
 ```

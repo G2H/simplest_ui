@@ -9,7 +9,7 @@ body{
 	color: #363e43;
 	height: 100%; 
 	width: 100%;
-	font-family: 'Source sans pro';
+	font-family: 'Helvetica Neue';
 	
 }
 #container{
@@ -18,12 +18,12 @@ body{
 #title{
 	background-color: white;
 	text-align: center;
-	height: 100px;
-	padding-top: 10px;
+	height: 35px;
+	/*padding-top: 10px;*/
 	border-bottom: 1px solid #edece9;
 }
 #title_text{
-	padding-top: 22px;
+	/*padding-top: 22px;*/
 }
 #subtitle{
 	background-color: #ECF0F1;
@@ -32,9 +32,14 @@ body{
 	padding-top: 0px;
 }
 
-#return_div{
-	background-color: white;
+#return_button{
+	color: black;
 	width: 50px;
+	position: absolute;
+	padding-left: 0px;
+	padding-top: 6px;
+	font-size: 150%;
+	font-weight: bold;
 }
 
 #footer{

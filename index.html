@@ -10,7 +10,7 @@
 </head>
 <body>
 	<div id="container">
-	<div id="title"><h1 id='title_text'></h1></div>
+	<div id="title"><a href='#'><div id='return_button'>〈</div></a><h1 id='title_text'></h1></div>
 	<!--<div id="subtitle"><h3 id='subtitle_text'>Site loading...</h3></div>-->
     <div id="content"><div class="loader">Loading...</div></div>
     <footer id="footer"><h4>Footer</h4></footer>
@@ -27,7 +27,7 @@ function renderPage(object,id){
     var ObjectToRender = filterObject(object.pages,'id',id)[0];
     if(ObjectToRender.type=='menu'){generateRows(ObjectToRender.elements);}
     if(ObjectToRender.type=='page'){generatePage(ObjectToRender.elements);}
-    
+    drawReturnButton();
 }
 
 var the_id = 1;
@@ -42,6 +42,5 @@ function changeId(newid){
     }
     renderPage(data,the_id);
 }
-
 </script>
 

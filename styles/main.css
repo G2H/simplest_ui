@@ -16,14 +16,15 @@ body{
 
 }
 #title{
-	background-color: white;
+	background-color: #15AB8A;
 	text-align: center;
-	height: 80px;
-	padding-top: 20px;
+	height: 40px;
+	/*padding-top: 20px;*/
 	border-bottom: 1px solid #edece9;
 }
 #title_text{
 	/*padding-top: 22px;*/
+
 }
 #subtitle{
 	background-color: #ECF0F1;
@@ -40,6 +41,12 @@ body{
 	padding-top: 10px;
 	font-size: 150%;
 	font-weight: bold;
+	/* inverse the arrow character */
+	-moz-transform: scale(-1, 1);
+	-webkit-transform: scale(-1, 1);
+	-o-transform: scale(-1, 1);
+	-ms-transform: scale(-1, 1);
+	transform: scale(-1, 1);
 }
 
 #footer{

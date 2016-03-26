@@ -11,7 +11,7 @@ function createDiv(div_class){
 function createLink(href){
 // create a link and fill the href
     a = document.createElement('a');
-    a.href = href;
+    a['href'] = href;
     return a;
 }
 
@@ -22,12 +22,13 @@ function updateText(id,new_text){
 
 function updateTitles(object){
     updateText('title_text',object.title);
+    document.title = object.title;
    // updateText('subtitle_text',object.subtitle);
 }
 
 function createRow(object){
 // given an object with link, title and subtitle element, return a row div
-    var a = createLink(object.link);
+    var a = createLink(ifaNull(object.link));
     var onclick = document.createAttribute('onclick');
     onclick.value = 'changeId('+object.link_id+')';
     a.setAttributeNode(onclick);
@@ -41,7 +42,7 @@ function createRow(object){
     column.setAttributeNode(cols);
 
     var icon = createDiv('icon');
-    icon_unicode = document.createTextNode(object.icon);
+    icon_unicode = document.createTextNode(ifNull(object.icon));
     icon.appendChild(icon_unicode);
 
     var line_title = createDiv('line_title');
@@ -100,6 +101,12 @@ function ifNull(element){
     }
     else {return '';}
 }
+function ifaNull(element){
+    if (typeof element !== 'undefined'){
+        return element;
+    }
+    else {return '#';}
+}
 
 function filterObject(object, column, value){
 // given an object, a column and a value, filter that object
@@ -123,7 +130,7 @@ function drawReturnButton(){
 
         div = document.createElement('div');
         div.id = 'return_button';
-        div_text = document.createTextNode('〈');
+        div_text = document.createTextNode('➔');
 
         div.appendChild(div_text);
         a.appendChild(div);

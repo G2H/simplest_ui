@@ -6,7 +6,7 @@ Create a simple, lightweight and mobile first menus website from a JSON file. Bu
 ## Todo
 ```
 Make it prettier
-
+Array for return button
 Get the JSON through XMLHTTPrequest
 
 ```

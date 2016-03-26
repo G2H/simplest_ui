@@ -8,7 +8,6 @@ data = {
          "type":"menu",
          "elements":[  
             {  
-               "id":1,
                "title":"First element",
                "subtitle":"C'est le sous-titre",
                "link":"#",

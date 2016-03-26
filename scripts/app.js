@@ -46,11 +46,11 @@ function createRow(object){
     icon.appendChild(icon_unicode);
 
     var line_title = createDiv('line_title');
-    title = document.createTextNode(object.title);
+    title = document.createTextNode(ifNull(object.title.slice(0,23)));
     line_title.appendChild(title);
 
     var line_subtitle = createDiv('line_subtitle');
-    subtitle = document.createTextNode(object.subtitle);
+    subtitle = document.createTextNode(ifNull(object.subtitle.slice(0,30)));
     line_subtitle.appendChild(subtitle);
 
     var chevron = createDiv('chevron');
@@ -120,12 +120,12 @@ function drawReturnButton(){
                 document.getElementById("return_a").remove();
     }
 
-    if(the_id != 1){
+    if(current_id != 1){
         var a = createLink('#');
         a.id = 'return_a'
 
         var onclick = document.createAttribute('onclick');
-        onclick.value = 'changeId('+previous_id+')';
+        onclick.value = 'changeId('+previous_ids[previous_ids.length - 1]+')';
         a.setAttributeNode(onclick);
 
         div = document.createElement('div');

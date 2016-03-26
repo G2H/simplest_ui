@@ -20,17 +20,18 @@
 <script src='scripts/app.js'></script>
 <script src='scripts/data2.js'></script>
 <script>
-var the_id = 1;
-var previous_id = 1;
+var current_id = 1;
+var previous_ids = [];
 
-renderPage(data,the_id);
+renderPage(data,current_id);
 
 function changeId(newid){
-    if (typeof the_id !== 'undefined' & typeof newid !== 'undefined') {
-        previous_id = the_id; 
-        the_id = newid;
+    if (typeof current_id !== 'undefined' & typeof newid !== 'undefined') {
+        newid !== previous_ids[previous_ids.length -1] && previous_ids.push(current_id); //only append if not return
+        previous_ids.includes(newid) && previous_ids.pop(); 
+        current_id = newid;
     }
-    renderPage(data,the_id);
+    renderPage(data,current_id);
 }
 </script>
 
